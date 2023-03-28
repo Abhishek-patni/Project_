@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in & Sign-up Page</title>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+    <div class="container" id="content01">
+        <div class="img-slider">
+            <h2>Welcome to Dypatil tindor</h2>
+            <p>Tag line if we have one</p>
+                <img src="Images/Second.png" alt="img">
+        </div>
+        <div class="content">
+            <h2>Welcome back</h2>
+            <p>Don't have account ?  <a href="index.html" id="sign-up" >Sign up </a></p>
+            <form action="" id="form">
+                <label for="email" id="elabel">Email</label> <br>
+                <input type="email" id="eemail" placeholder="Enteryour@gmail.com" autocomplete="off"> <br>
+                <label for="password" id="plabel">Password</label> <br>
+                <input type="password" name="password" id="lpassword" placeholder="Enter password" > <br>
+                <button type="submit" id="btn1" onclick="SignIn()" >Log-In </button>
+            </form>
+            <div class="other">
+                <h3>Or Sign up with </h3>
+                <div class="icons">
+                    <img src="https://img.icons8.com/fluency/48/null/google-logo.png" alt="Hero"/>   
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="server.js"></script>
+</body>
+</html>
