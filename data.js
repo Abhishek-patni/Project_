@@ -25,7 +25,7 @@ function UserRegister(){
             email: email,
             password: password,
         });
-        window.location.href = "https://www.google.com";
+        window.location.href = "C:/Dypiu Dating/Store_Gender/reg2.html";
     }).catch(function (error){
         var errorcode = error.code;
         var errormsg = error.message;
@@ -48,7 +48,7 @@ function SignIn(){
     promise.then(() => {
         datab.orderByChild('email').equalTo(email).once('value', function(snapshot) {
             if (snapshot.exists()) {
-                window.location.href = "https://www.google.com";
+                window.location.href = "C:/Dypiu Dating/Store_Gender/reg2.html";
             } else {
                 alert('Invalid login credentials');
             }
@@ -100,7 +100,7 @@ googleSignupButton.addEventListener('click', () => {
       // Add an event listener to detect when the popup window is closed
       window.addEventListener('beforeunload', () => {
         // Redirect to www.google.com
-        window.location.href = 'https://www.google.com';
+        window.location.href = 'C:/Dypiu Dating/Store_Gender/reg2.html';
       });
     })
     .catch((error) => {

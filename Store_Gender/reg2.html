@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="register.css" />
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <title>AKP</title>
+</head>
+
+<body>
+  <div class="screen">
+    <div class="form-container">
+      <div class="form-content">
+        <h2><a href="./index.html">Dypiu Tinder</a></h2>
+        <form action="" method="POST">
+          <div class="gender radio">
+            <h4>Your gender :</h4>
+            <div>
+              <label>
+                <input type="radio" id="uggender" name="user-gender" value="man" checked />
+                <span>Man</span>
+              </label>
+            </div>
+
+            <div>
+              <label>
+                <input type="radio" name="user-gender" value="woman" />
+                <span>Woman</span>
+              </label>
+              <div>
+
+              </div>
+            </div>
+
+            <h4>You Search</h4>
+            <div class="gender radio">
+              <div>
+                <label>
+                  <input type="radio" id="sggender" name="search-gender" value="man" checked />
+                  <span>Man</span>
+                </label>
+              </div>
+
+              <div>
+                <label>
+                  <input type="radio" name="search-gender" value="woman" />
+                  <span>Woman</span>
+                </label>
+              </div>
+            </div>
+            <input class="btn-login" type="submit" value="Continue" onscroll=chooseGender />
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src=" https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+            <script src="data.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="server.js"></script>
+            <script>
+              function chooseGender() {
+                if (id="uggender"== value=="man") {
+                  return onclick = location.href = 'sliding-main/Male.html';
+                }
+                else {
+                  return onclick = location.href = 'sliding-main/Female.html';
+                }
+              }
+            </script>
+</body>
+
+</html>

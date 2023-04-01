@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add the required CSS and JS libraries -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+</head>
+<style>
+    /* Set the width and height of the swiper container */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Set the styles for the swiper slides */
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+</style>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper" id="cards">
+    </div>
+    <!-- Add navigation arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+  apiKey: "AIzaSyDTuXtTS2MIJv4bW-XnUeeNbtCGVJj0hpo",
+  authDomain: "dating-web-c6ce9.firebaseapp.com",
+  databaseURL: "https://dating-web-c6ce9-default-rtdb.firebaseio.com",
+  projectId: "dating-web-c6ce9",
+  storageBucket: "dating-web-c6ce9.appspot.com",
+  messagingSenderId: "622569066360",
+  appId: "1:622569066360:web:76def5dd380d5ad812428d",
+  measurementId: "G-5HWWGSE4VB"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the database service
+const database = firebase.database();
+
+// Get a reference to the cards container
+const cardsContainer = document.getElementById("cards");
+
+// Initialize the swiper slider
+const swiper = new Swiper(".swiper-container", {
+  // Add navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+// Attach a listener to the database reference
+database.ref("data").on("value", (snapshot) => {
+  // Remove all existing cards from the container
+  cardsContainer.innerHTML = "";
+
+  // Loop through the data items and create a card for each one
+  snapshot.forEach((childSnapshot) => {
+    const childData = childSnapshot.val();
+    const card = createCard(childData);
+    cardsContainer.appendChild(card);
+  });
+
+  // Update the swiper slider
+  swiper.update();
+});
+
+// Function to create a card for a data item
+function createCard(data) {
+  // Create the card elements
+  const card = document.createElement("div");
+  card.classList.add("swiper-slide");
+  const name = document.createElement("h3");
+  const email = document.createElement("p");
+  const password = document.createElement("p");
+
+  // Set the card content
+  name.textContent = data.name;
+  email.textContent = data.email;
+  password.textContent = data.password;
+
+  // Add the card elements to the card
+  card.appendChild(name);
+  card.appendChild(email);
+  card.appendChild(password);
+
+  return card;
+}
+  </script>
+</body>
+</html>
