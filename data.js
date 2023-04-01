@@ -86,20 +86,26 @@ function  getId(id){
 
 //Gogogle
 //Sign in with google
-const googleSignupBtn = document.getElementById("google-signup-btn");
-googleSignupBtn.addEventListener("click", () => {
+// google-signup.js
+const googleSignupButton = document.querySelector('#google-signup');
+
+googleSignupButton.addEventListener('click', () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
     .then((userCredential) => {
-      // Signed up successfully
-      window.location.href = "https://www.google.com";
+      // Signed in with Google
       const user = userCredential.user;
       console.log(user);
+      // Redirect to www.google.com
+      window.location.href = "https://www.google.com";
     })
     .catch((error) => {
-      // Error occurred
-      alert('Wrong information')
       console.error(error);
+      // Display error message to the user
+      const errorMessage = error.message;
+      const errorElement = document.createElement('div');
+      errorElement.classList.add('error');
+      errorElement.textContent = errorMessage;
+      document.querySelector('body').appendChild(errorElement);
     });
 });
-
