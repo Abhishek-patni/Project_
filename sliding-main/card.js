@@ -3,25 +3,29 @@ class Card {
     imageUrl,
     onDismiss,
     onLike,
-    onDislike
+    onDislike,
+    search,
   }) {
     this.imageUrl = imageUrl;
     this.onDismiss = onDismiss;
     // this.onLike = onLike;
     //do not edit
     this.onLike = () => {
-      this.sendEmail(); // call the sendEmail function when the user likes the card
+      if (search[0]=='Images/Abhijeet.jpeg') {
+        this.sendmail_1();
+      } else {
+        this.sendEmail();
+      }
+       // call the sendEmail function when the user likes the card
       onLike();
     };
     this.onDislike = onDislike;
     this.#init();
   }
-
   //Send Email function to send mail id's
-  //avinash check
   sendEmail() {
     emailjs.send("service_lfjaz1f", "template_rb1vfqo", {
-      to_email: "recipient@example.com",
+      to_email: 'patniapk1234@gmail.com',
       message: "User liked this card."
     })
     .then(function(response) {
@@ -31,6 +35,18 @@ class Card {
     });
   }
 
+
+  sendmail_1() {
+    emailjs.send("service_lfjaz1f", "template_w3qh13n", {
+      to_email: 'patniapk1234@gmail.com',
+      message: "User liked this card."
+    })
+    .then(function(response) {
+      console.log("Email sent:", response);
+    }, function(error) {
+      console.log("Email error:", error);
+    });
+  }
   // private properties
   #startPoint;
   #offsetX;
@@ -154,3 +170,4 @@ class Card {
     }
   }
 }
+

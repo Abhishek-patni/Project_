@@ -5,11 +5,11 @@ const dislike = document.querySelector('#dislike');
 
 // constants
 const urls = [
-  'sliding-main/Images/Abhijeet.jpeg',
-  'sliding-main/Images/Harshit.jpeg',
-  'sliding-main/Images/Hussain.jpeg',
-  'sliding-main/Images/Neeraj.jpeg',
-  'sliding-main/Images/Premchand.jpeg',
+  'Images/Abhijeet.jpeg',
+  'Images/Harshit.jpeg',
+  'Images/Hussain.jpeg',
+  'Images/Neeraj.jpeg',
+  'Images/Premchand.jpeg',
 
 ];
 
@@ -19,6 +19,7 @@ let cardCount = 0;
 // functions
 function appendNewCard() {
   const card = new Card({
+    search:urls,
     imageUrl: urls[cardCount % 5],
     onDismiss: appendNewCard,
     onLike: () => {
@@ -28,7 +29,7 @@ function appendNewCard() {
     onDislike: () => {
       dislike.style.animationPlayState = 'running';
       dislike.classList.toggle('trigger');
-    }
+    },
   });
   swiper.append(card.element);
   cardCount++;
@@ -42,5 +43,5 @@ function appendNewCard() {
 // first 5 cards
 for (let i = 0; i < 5; i++) {
   appendNewCard();
+  console.log(i)
 }
-
