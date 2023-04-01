@@ -1,6 +1,6 @@
 const firebaseConfig = {
   apiKey: "AIzaSyDTuXtTS2MIJv4bW-XnUeeNbtCGVJj0hpo",
-  authDomain: "https://abhishekpatni.me/",
+  authDomain: "dating-web-c6ce9.firebaseapp.com",
   databaseURL: "https://dating-web-c6ce9-default-rtdb.firebaseio.com",
   projectId: "dating-web-c6ce9",
   storageBucket: "dating-web-c6ce9.appspot.com",
