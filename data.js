@@ -97,7 +97,7 @@ googleSignupButton.addEventListener('click', () => {
       const user = userCredential.user;
       console.log(user);
       // Redirect to www.google.com
-      provider.addScope('https://www.google.com');
+      window.location.href='https://www.google.com';
     })
     .catch((error) => {
       console.error(error);
