@@ -96,8 +96,12 @@ googleSignupButton.addEventListener('click', () => {
       // Signed in with Google
       const user = userCredential.user;
       console.log(user);
-      // Redirect to www.google.com
-      window.location.href='https://www.google.com';
+
+      // Add an event listener to detect when the popup window is closed
+      window.addEventListener('beforeunload', () => {
+        // Redirect to www.google.com
+        window.location.href = 'https://www.google.com';
+      });
     })
     .catch((error) => {
       console.error(error);
@@ -109,3 +113,4 @@ googleSignupButton.addEventListener('click', () => {
       document.querySelector('body').appendChild(errorElement);
     });
 });
+
