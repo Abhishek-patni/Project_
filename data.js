@@ -85,3 +85,21 @@ function  getId(id){
 
 
 //Gogogle
+//Sign in with google
+const googleSignupBtn = document.getElementById("google-signup-btn");
+googleSignupBtn.addEventListener("click", () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then((userCredential) => {
+      // Signed up successfully
+      window.location.href = "https://www.google.com";
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      // Error occurred
+      alert('Wrong information')
+      console.error(error);
+    });
+});
+
