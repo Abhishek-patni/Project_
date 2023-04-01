@@ -23,7 +23,7 @@ function UserRegister(){
         datab.push().set({
             name: name,
             email: email,
-            password: password
+            password: password,
         });
         window.location.href = "https://www.google.com";
     }).catch(function (error){
@@ -75,10 +75,13 @@ document.getElementById('form').addEventListener('submit', (e) => {
         email : getId('eemail'),
         password : getId('lpassword')
     });
-    alert("Successfully Signed Up");
+    console("Succesfull")
     console.log("sent");
     document.getElementById('form').reset();
 });
 function  getId(id){
     return document.getElementById(id).value;
 }
+
+
+//Gogogle

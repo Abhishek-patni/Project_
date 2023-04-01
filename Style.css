@@ -18,9 +18,11 @@ body {
     height: 500px;
     background-color: #fff;
     position: absolute;
-    top: 150px;
-    left: 300px;
-    border-radius: 20px;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    bottom: 40%;
+    border-radius: 30px;
 }
 .img-slider{
     width: 400px;
