@@ -66,12 +66,11 @@
               function redirectToPage() {
                 const gender = document.querySelector('input[name="search-gender"]:checked').value;
                 if (gender === 'man') {
-                  window.location.href = 'C:/Dypiu Dating/sliding-main/Male.html';
+                  window.location.href = "sliding-main/Female.html";
                 } else if (gender === 'woman') {
-                  window.location.href = 'C:/Dypiu Dating/sliding-main/Female.html';
+                  window.location.href = "Store_Gender/sliding-main/Male.html";
                 }
               }
-              
               const submitButton = document.querySelector('input[type="submit"]');
               submitButton.addEventListener('click', function(event) {
                 event.preventDefault();
