@@ -5,6 +5,7 @@ class Card {
     onLike,
     onDislike,
     search,
+    seark,
   }) {
     this.imageUrl = imageUrl;
     this.onDismiss = onDismiss;
@@ -13,12 +14,21 @@ class Card {
     this.onLike = () => {
       if (search[0]=='Images/Abhijeet.jpeg') {
         this.sendmail_1();
-      } else {
-        this.sendEmail();
       }
-       // call the sendEmail function when the user likes the card
+      else{
+        alert('User not verified fully')
+      }// call the sendEmail function when the user likes the card
       onLike();
     };
+    this.onLike=()=>{
+      if (seark[0]=='Images/Bushra.jpeg') {
+        this.sendEmail();
+      }
+      else{
+        alert('User not verified fully')
+      }// call the sendEmail function when the user likes the card
+      onLike();
+    }
     this.onDislike = onDislike;
     this.#init();
   }

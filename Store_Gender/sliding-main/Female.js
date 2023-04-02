@@ -15,6 +15,7 @@ let cardCount = 0;
 // functions
 function appendNewCard() {
   const card = new Card({
+    seark:urls,
     imageUrl: urls[cardCount % 2],
     onDismiss: appendNewCard,
     onLike: () => {
