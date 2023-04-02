@@ -86,31 +86,23 @@ function  getId(id){
 
 //Gogogle
 //Sign in with google
-// google-signup.js
-const googleSignupButton = document.querySelector('#google-signup');
+const googleSigninButton = document.querySelector('#google-signin');
+  googleSigninButton.addEventListener('click', () => {
+    // Create a new Google auth provider object
+    const provider = new firebase.auth.GoogleAuthProvider();
 
-googleSignupButton.addEventListener('click', () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider)
-    .then((userCredential) => {
-      // Signed in with Google
-      const user = userCredential.user;
-      console.log(user);
+    // Sign in with Google using Firebase Authentication
+    firebase.auth().signInWithPopup(provider)
+      .then((result) => {
+        // Signed in with Google
+        const user = result.user;
+        console.log(user);
 
-      // Add an event listener to detect when the popup window is closed
-      window.addEventListener('beforeunload', () => {
-        // Redirect to www.google.com
-        window.location.href = 'www.google.com';
+        // Redirect to google.com
+        window.location.href = "https://www.google.com";
+      })
+      .catch((error) => {
+        console.error(error);
       });
-    })
-    .catch((error) => {
-      console.error(error);
-      // Display error message to the user
-      const errorMessage = error.message;
-      const errorElement = document.createElement('div');
-      errorElement.classList.add('error');
-      errorElement.textContent = errorMessage;
-      document.querySelector('body').appendChild(errorElement);
-    });
-});
+  });
 
