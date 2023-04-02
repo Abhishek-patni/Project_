@@ -1,32 +1,32 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDTuXtTS2MIJv4bW-XnUeeNbtCGVJj0hpo",
-    authDomain: "dating-web-c6ce9.firebaseapp.com",
-    databaseURL: "https://dating-web-c6ce9-default-rtdb.firebaseio.com",
-    projectId: "dating-web-c6ce9",
-    storageBucket: "dating-web-c6ce9.appspot.com",
-    messagingSenderId: "622569066360",
-    appId: "1:622569066360:web:76def5dd380d5ad812428d",
-    measurementId: "G-5HWWGSE4VB"
+  apiKey: "AIzaSyDTuXtTS2MIJv4bW-XnUeeNbtCGVJj0hpo",
+  authDomain: "dating-web-c6ce9.firebaseapp.com",
+  databaseURL: "https://dating-web-c6ce9-default-rtdb.firebaseio.com",
+  projectId: "dating-web-c6ce9",
+  storageBucket: "dating-web-c6ce9.appspot.com",
+  messagingSenderId: "622569066360",
+  appId: "1:622569066360:web:76def5dd380d5ad812428d",
+  measurementId: "G-5HWWGSE4VB"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 // let's code  //Register user 
-var datab = firebase.database().ref('data');
-function UserRegister() {
+var datab  = firebase.database().ref('data');
+function UserRegister(){
     var email = document.getElementById('eemail').value;
     var password = document.getElementById('lpassword').value;
     var name = document.getElementById('nname').value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+    firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
         datab.push().set({
             name: name,
             email: email,
             password: password,
         });
         window.location.href = "Store_Gender/reg2.html";
-    }).catch(function (error) {
+    }).catch(function (error){
         var errorcode = error.code;
         var errormsg = error.message;
         if (errorcode === 'auth/wrong-password') {
@@ -41,12 +41,12 @@ function UserRegister() {
 
 //User login 
 const auth = firebase.auth();
-function SignIn() {
+function SignIn(){
     var email = document.getElementById('eemail').value;
     var password = document.getElementById('lpassword').value;
-    const promise = auth.signInWithEmailAndPassword(email, password);
+    const promise = auth.signInWithEmailAndPassword(email,password);
     promise.then(() => {
-        datab.orderByChild('email').equalTo(email).once('value', function (snapshot) {
+        datab.orderByChild('email').equalTo(email).once('value', function(snapshot) {
             if (snapshot.exists()) {
                 window.location.href = "Store_Gender/reg2.html";
             } else {
@@ -72,34 +72,35 @@ document.getElementById('form').addEventListener('submit', (e) => {
     var userInfo = datab.push();
     userInfo.set({
         name: getId('nname'),
-        email: getId('eemail'),
-        password: getId('lpassword')
+        email : getId('eemail'),
+        password : getId('lpassword')
     });
     console("Succesfull")
     console.log("sent");
     document.getElementById('form').reset();
 });
-function getId(id) {
+function  getId(id){
     return document.getElementById(id).value;
 }
 
 
 //Gogogle
 //Sign in with google
-var provider = new firebase.auth.GoogleAuthProvider();
-document.getElementById("google-signin-btn").addEventListener("click", function () {
-    // Authenticate with Google
+const googleSigninButton = document.querySelector('#google-signin');
+  googleSigninButton.addEventListener('click', () => {
+    // Create a new Google auth provider object
+    const provider = new firebase.auth.GoogleAuthProvider();
+    // Sign in with Google using Firebase Authentication
     firebase.auth().signInWithPopup(provider)
-        .then((result) => {
-            window.location.href='www.google.com';
-            // User is signed in
-            var user = result.user;
-            console.log(user);
-        })
-        .catch((error) => {
-            // Handle errors here
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        });
-});
+      .then((result) => {
+        // Signed in with Google
+        const user = result.user;
+        console.log(user);
+        // Redirect to google.com
+        window.location.href = "https://www.google.com";
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
