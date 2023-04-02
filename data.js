@@ -100,7 +100,7 @@ googleSignupButton.addEventListener('click', () => {
       // Add an event listener to detect when the popup window is closed
       window.addEventListener('beforeunload', () => {
         // Redirect to www.google.com
-        window.location.href = 'Store_Gender/reg2.html';
+        window.location.href = 'www.google.com';
       });
     })
     .catch((error) => {
