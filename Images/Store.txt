@@ -1,0 +1,52 @@
+Firebaese google
+email js:Z5?G@iadyyVPdVa COLLEGE MAIL
+
+
+Sliding main_____________
+
+Cardjs:This is a JavaScript class definition for a Card object that can be dragged and dismissed by the user. The card displays an image and has three functions that can be called when the user interacts with it: onDismiss, onLike, and onDislike. When the user swipes the card to the right or left, the card is dismissed and the onDismiss function is called. When the user clicks the "Like" button, the onLike function is called, and when the user clicks the "Dislike" button, the onDislike function is called.
+The class also has two private methods: #init, which initializes the card by creating an HTML element and attaching it to the DOM, and #dismiss, which handles the dismissal of the card when the user swipes it.
+Additionally, there are two private properties: #startPoint and #offsetX/#offsetY. The former is used to track the starting point of the card when it is being dragged, and the latter are used to track the card's current offset from its starting point. There are also several event listeners that handle user input, both for mouse and touch devices.
+Finally, the class includes two functions for sending emails when the user likes a specific card. These functions use the EmailJS library to send emails using a preconfigured service and template ID.
+
+
+
+Malejs:This is an HTML document with a title "Card Swiper" and a stylesheet linked in the head section. The document contains a div with an id of "swiper", which is currently empty, and two ion-icons with ids of "dislike" and "like". There are also three script tags linked, the first two are JavaScript files named "card.js" and "Male.js", and the third is a script tag for the ionicons library. The fourth script tag is for the emailjs library which is used to send emails from the website. The last two script tags are used for loading the ionicons library, with the first one being for modern browsers that support ES6 modules and the second one being for older browsers that don't support them.
+
+
+Datajs:This is a JavaScript code that utilizes Firebase authentication and Realtime Database to register and login users, as well as sign in with Google.
+The firebaseConfig object contains the configuration information for connecting to the Firebase project. firebase.initializeApp() initializes the Firebase app, and firebase.analytics() enables Google Analytics for the Firebase app.
+var datab = firebase.database().ref('data'); initializes a Realtime Database reference to the "data" node.
+function UserRegister() function handles user registration. It gets the user's email, password, and name from the input fields on the registration form, and calls firebase.auth().createUserWithEmailAndPassword(email, password) to create a new user with the given email and password. If the registration is successful, it saves the user's name, email, and password to the Realtime Database using datab.push().set(), and redirects the user to the next page. If there is an error, it displays an error message.
+const auth = firebase.auth(); initializes the Firebase authentication object.
+function SignIn() function handles user login. It gets the user's email and password from the input fields on the login form, and calls auth.signInWithEmailAndPassword(email, password) to sign in with the given email and password. If the login is successful, it checks if the user exists in the Realtime Database by querying with datab.orderByChild('email').equalTo(email).once('value', function(snapshot) {...}). If the user exists, it redirects the user to the next page. If the user does not exist, it displays an error message. If there is an error, it displays an error message.
+The document.getElementById('form').addEventListener() function handles the form submission for user registration. It prevents the default form submission behavior, gets the user's name, email, and password from the input fields, saves them to the Realtime Database using userInfo.set(), and logs a success message to the console.
+The function getId(id) function is a helper function that gets the value of an input field with the given id.
+The const googleSigninButton initializes a reference to the Google sign-in button element on the page.
+googleSigninButton.addEventListener() function handles the click event on the Google sign-in button. It creates a new GoogleAuthProvider object, signs in with Google using Firebase Authentication with firebase.auth().signInWithPopup(provider), and redirects the user to google.com upon successful sign-in. If there is an error, it logs an error message to the console.
+
+
+
+
+
+
+Index.html:This is an HTML document containing the code for a web page. The page appears to be a sign-up page for a dating app called "Dypiu Tinder".
+The HTML code includes a number of tags that define the structure and content of the page, such as <head>, <meta>, <title>, <link>, <body>, <div>, <h2>, <p>, <form>, <label>, <input>, <button>, <img>, and <script>.
+There are also references to external resources such as a CSS file ("Style.css"), image files ("Icon.png", "First.png"), and several JavaScript libraries (including Firebase, jQuery, and Google Platform API).
+The page includes a form for user registration, with fields for name, email, and password, as well as a button to submit the form. There is also an option to sign up using a Google account.
+The JavaScript files referenced in the document appear to provide functionality for user authentication and interaction with a server.
+
+
+
+Male.html:This is an HTML file that creates a card-swiping interface for a dating app. The file includes:
+
+A title: "Card Swiper"
+A link to an external stylesheet named "style.css"
+An ion-icon element with an ID of "dislike" and a name of "heart-dislike", which represents the "dislike" button
+A div element with an ID of "swiper", which will contain the cards that the user can swipe through
+An ion-icon element with an ID of "like" and a name of "heart", which represents the "like" button
+A script tag that includes the EmailJS library, which allows the app to send emails using JavaScript
+A script tag that initializes the EmailJS library with a user ID
+A script tag that links to an external JavaScript file named "card.js", which contains code for the card-swiping functionality
+A script tag that links to an external JavaScript file named "Male.js", which contains data about male users for the app
+Two script tags that include the Ionicons library, which provides the heart icons used for the "like" and "dislike" buttons.
