@@ -94,12 +94,12 @@ const googleSigninButton = document.querySelector('#google-signin');
     // Sign in with Google using Firebase Authentication
     firebase.auth().signInWithPopup(provider)
       .then((result) => {
+        window.location.href = "https://www.google.com";
         // Signed in with Google
         const user = result.user;
         console.log(user);
-
         // Redirect to google.com
-        window.location.href = "https://www.google.com";
+        
       })
       .catch((error) => {
         console.error(error);
