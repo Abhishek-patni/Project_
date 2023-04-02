@@ -62,16 +62,22 @@
             <script src="data.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script src="server.js"></script>
-            <!-- <script>
-              function chooseGender() {
-                if (id="uggender"== value=="man") {
-                  return onclick = location.href = 'sliding-main/Male.html';
-                }
-                else {
-                  return onclick = location.href = 'sliding-main/Female.html';
+            <script>
+              function redirectToPage() {
+                const gender = document.querySelector('input[name="search-gender"]:checked').value;
+                if (gender === 'man') {
+                  window.location.href = 'C:/Dypiu Dating/sliding-main/Male.html';
+                } else if (gender === 'woman') {
+                  window.location.href = 'C:/Dypiu Dating/sliding-main/Female.html';
                 }
               }
+              
+              const submitButton = document.querySelector('input[type="submit"]');
+              submitButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                redirectToPage();
+              });
             </script>
-</body> -->
+</body>
 
 </html>

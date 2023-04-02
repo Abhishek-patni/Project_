@@ -5,8 +5,8 @@ const dislike = document.querySelector('#dislike');
 
 // constants
 const urls = [
-  'sliding-main/Images/Bushra.jpeg',
-  'sliding-main/Images/Anuja.jpeg',
+  'Images/Bushra.jpeg',
+  'Images/Anuja.jpeg',
 ];
 
 // variables
@@ -15,7 +15,7 @@ let cardCount = 0;
 // functions
 function appendNewCard() {
   const card = new Card({
-    imageUrl: urls[cardCount % 5],
+    imageUrl: urls[cardCount % 2],
     onDismiss: appendNewCard,
     onLike: () => {
       like.style.animationPlayState = 'running';
@@ -36,7 +36,7 @@ function appendNewCard() {
 }
 
 // first 5 cards
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 2; i++) {
   appendNewCard();
 }
 

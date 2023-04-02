@@ -22,6 +22,8 @@ class Card {
     this.onDislike = onDislike;
     this.#init();
   }
+
+
   //Send Email function to send mail id's
   sendEmail() {
     emailjs.send("service_lfjaz1f", "template_rb1vfqo", {
@@ -34,8 +36,6 @@ class Card {
       console.log("Email error:", error);
     });
   }
-
-
   sendmail_1() {
     emailjs.send("service_lfjaz1f", "template_w3qh13n", {
       to_email: 'patniapk1234@gmail.com',
@@ -47,6 +47,12 @@ class Card {
       console.log("Email error:", error);
     });
   }
+
+
+
+
+
+
   // private properties
   #startPoint;
   #offsetX;
