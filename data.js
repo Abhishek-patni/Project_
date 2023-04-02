@@ -86,7 +86,6 @@ function getId(id) {
 
 //Gogogle
 //Sign in with google
-firebase.initializeApp(firebaseConfig);
 var provider = new firebase.auth.GoogleAuthProvider();
 document.getElementById("google-signin-btn").addEventListener("click", function () {
     // Authenticate with Google
