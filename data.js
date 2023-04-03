@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
       firebase.auth().signInWithPopup(provider)
         .then((result) => {
           // Redirect to a secure page within the website
-          window.location.href = "reg2.html";
+          window.location.href = "./Store_Gender/reg2.html";
         })
         .catch((error) => {
           // Handle the error and provide a meaningful message to the user
