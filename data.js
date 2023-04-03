@@ -86,7 +86,7 @@ function  getId(id){
 
 //Gogogle
 //Sign in with google
-const googleSigninButton = document.querySelector('#google-signin');
+const googleSigninButton = document.querySelector('google-signin');
   googleSigninButton.addEventListener('click', () => {
     // Create a new Google auth provider object
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -97,7 +97,7 @@ const googleSigninButton = document.querySelector('#google-signin');
         const user = result.user;
         console.log(user);
         // Redirect to google.com
-        window.location.href = "https://www.google.com";
+        window.location.href = "Store_Gender/reg2.html";
       })
       .catch((error) => {
         console.error(error);
