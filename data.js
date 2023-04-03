@@ -97,7 +97,7 @@ const googleSigninButton = document.querySelector('google-signin');
         const user = result.user;
         console.log(user);
         // Redirect to google.com
-        window.location.href = "Store_Gender/reg2.html";
+        window.location.href = "https://www.google.com";
       })
       .catch((error) => {
         console.error(error);
