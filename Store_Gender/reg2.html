@@ -66,9 +66,9 @@
               function redirectToPage() {
                 const gender = document.querySelector('input[name="search-gender"]:checked').value;
                 if (gender === 'man') {
-                  window.location.href = "sliding-main/Female.html";
-                } else if (gender === 'woman') {
                   window.location.href = "sliding-main/Male.html";
+                } else if (gender === 'woman') {
+                  window.location.href = "sliding-main/Female.html";
                 }
               }
               const submitButton = document.querySelector('input[type="submit"]');
