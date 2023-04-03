@@ -86,21 +86,28 @@ function  getId(id){
 
 //Gogogle
 //Sign in with google
-const googleSigninButton = document.querySelector('google-signin');
-  googleSigninButton.addEventListener('click', () => {
-    // Create a new Google auth provider object
-    const provider = new firebase.auth.GoogleAuthProvider();
-    // Sign in with Google using Firebase Authentication
-    firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-        // Signed in with Google
-        const user = result.user;
-        console.log(user);
-        // Redirect to google.com
-        window.location.href = "https://www.google.com";
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  });
+// Wait for the document to load before executing the script
+document.addEventListener("DOMContentLoaded", function() {
 
+    // Find the Google Sign-in button by its ID
+    const googleSigninButton = document.querySelector('#google-signin');
+  
+    // Add a click event listener to the button
+    googleSigninButton.addEventListener('click', () => {
+      // Create a new Google auth provider object
+      const provider = new firebase.auth.GoogleAuthProvider();
+  
+      // Sign in with Google using Firebase Authentication
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          // Redirect to a secure page within the website
+          window.location.href = "/secure-page.html";
+        })
+        .catch((error) => {
+          // Handle the error and provide a meaningful message to the user
+          console.error("Google Sign-in failed:", error);
+          alert("Oops! Google Sign-in failed. Please try again later.");
+        });
+    });
+  });
+  
