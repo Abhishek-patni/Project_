@@ -37,6 +37,7 @@ class Card {
   //Send Email function to send mail id's
   sendEmail() {
     emailjs.send("service_lfjaz1f", "template_rb1vfqo", {
+      //if no user found deault mail admin mail do not touch or code will break
       to_email: 'patniapk1234@gmail.com',
       message: "User liked this card."
     })
@@ -48,6 +49,7 @@ class Card {
   }
   sendmail_1() {
     emailjs.send("service_lfjaz1f", "template_w3qh13n", {
+      //if no user found deault mail admin mail do not touch or code will break
       to_email: 'patniapk1234@gmail.com',
       message: "User liked this card."
     })
