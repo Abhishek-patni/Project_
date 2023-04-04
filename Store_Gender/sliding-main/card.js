@@ -14,21 +14,23 @@ class Card {
     this.onLike = () => {
       if (search[0]=='Images/Abhijeet.jpeg') {
         this.sendmail_1();
+        window.open('https://hack.chat/?datechat', '_blank');
       }
       else{
         alert('User not verified fully')
       }// call the sendEmail function when the user likes the card
       onLike();
     };
-    this.onLike=()=>{
-      if (seark[0]=='Images/Bushra.jpeg') {
-        this.sendEmail();
+    this.onLike = () => {
+      if (search[0] === 'Images/Abhijeet.jpeg') {
+        this.sendmail_1();
+        window.open('https://hack.chat/?datechat', '_blank');
+      } else {
+        alert('User not fully verified.');
       }
-      else{
-        alert('User not verified fully')
-      }// call the sendEmail function when the user likes the card
-      onLike();
-    }
+      onLike();//calls the function when user like
+    };
+    
     this.onDislike = onDislike;
     this.#init();
   }

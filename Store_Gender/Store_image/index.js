@@ -41,7 +41,7 @@ function uploadImage(){
             if(url != ""){
                 img.setAttribute("src",url);
                 img.style.display="block";
-                alert("We got your data your card will be added within Three upcoming days"),
+                alert("Your Card will be added soon"),
                 setTimeout(function(){
                     window.location.href = "../reg2.html"; // Redirect to Google after 10 seconds
                 }, 10000);
