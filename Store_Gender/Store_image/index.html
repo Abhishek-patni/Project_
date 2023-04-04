@@ -4,28 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NSCODE UPLOAD TASK</title>
+    <title>AKP</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <input
-      type="file"
-      class="inputFile"
-      id="fileInp"
-      onchange="getFile(event)"
-      accept="image/png, image/jpeg, video/mp4"
-    />
-    <label for="fileInp">+</label>
-    <span class="fileText"></span>
-    <button onclick="uploadImage()">UPLOAD IMAGE</button>
-    <div class="bar">
-      <div class="progress"></div>
+    <div class="images-container">
+      <img src="../../Images/undraw_Appreciation_l5ej-removebg-preview.png" alt="image" id="image1">
+      <img src="../../Images/undraw_Love_re_mwbq-removebg-preview.png" alt="" id="image2">
     </div>
-    <div class="uploadPercentage">0%</div>
-
-    <div class="imageUploaded">
-      <img alt="" class="img" />
-    </div>
+    <div class="content">
+      <input type="file" class="inputFile" id="fileInp" onchange="getFile(event)" accept="image/png, image/jpeg, video/mp4"/>
+      <h3>Plz upload your image</h3>
+      <label for="fileInp">+</label>
+      <span class="fileText"></span>
+      <button onclick="uploadImage()">UPLOAD IMAGE</button>
+      <div class="bar">
+        <div class="progress"></div>
+      </div>
+      <div class="uploadPercentage">0%</div>
+      <div class="imageUploaded">
+        <img alt="" class="img" />
+      </div>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
     <script src="./index.js"></script>
     <script src="../../data.js"></script>
