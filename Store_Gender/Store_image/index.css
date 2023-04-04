@@ -8,6 +8,7 @@ body{
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    background-color: rgb(1 117 194);
 }
 
 .inputFile{
@@ -25,12 +26,12 @@ label{
     color: white;
     margin-bottom: 10px;
     font-size: 100px;
-    background: linear-gradient(45deg,blue,red);
+    background: black;
     cursor: pointer;
 }
 button{
     padding: 20px 25px;
-    background: rgb(12, 70, 179);
+    background: black;
     color: white;
     border: none;
     margin-bottom: 10px;
@@ -45,7 +46,7 @@ button{
     margin-bottom: 10px;
 }
 .progress{
-    background: linear-gradient(12deg,red,blue);
+    background: black;
     height: 100%;
     width: 0%;
 
