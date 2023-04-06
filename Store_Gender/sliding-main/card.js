@@ -12,7 +12,7 @@ class Card {
     // this.onLike = onLike;
     //do not edit
     this.onLike = () => {
-      if (search[0]=='Images/Abhijeet.jpeg') {
+      if (seark[1]=='Images/Anuja.jpeg') {
         this.sendmail_1();
         window.open('https://hack.chat/?datechat', '_blank');
       }
