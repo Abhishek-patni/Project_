@@ -48,7 +48,7 @@ function SignIn(){
     promise.then(() => {
         datab.orderByChild('email').equalTo(email).once('value', function(snapshot) {
             if (snapshot.exists()) {
-                window.location.href = "Store_Gender/Store_image/index.html";
+                window.location.href = "Store_Gender/reg2.html";
             } else {
                 alert('Invalid login credentials');
             }
