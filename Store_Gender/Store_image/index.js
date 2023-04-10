@@ -17,12 +17,16 @@ var percentVal;
 var fileItem;
 var fileName;
 var img = document.querySelector(".img");
- function getFile(e){
+function getFile(e){
     fileItem = e.target.files[0];
-    fileName = fileItem.name;
-    fileText.innerHTML = fileName;
+    if (fileItem.type.startsWith("image/")) {
+        fileName = fileItem.name;
+        fileText.innerHTML = fileName;
+    } else {
+        alert("Please select an image file.");
+        fileText.innerHTML = "No file selected";
+    }
 }
-
 
 function uploadImage(){
     let storageRef = firebase.storage().ref("images/"+fileName);
