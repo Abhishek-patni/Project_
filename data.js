@@ -25,7 +25,7 @@ function UserRegister(){
             email: email,
             password: password,
         });
-        window.location.href = "Store_Gender/Store_image/index.html";
+        window.location.href = "https://github.com/Abhishek-patni/dy";
     }).catch(function (error){
         var errorcode = error.code;
         var errormsg = error.message;
@@ -48,7 +48,7 @@ function SignIn(){
     promise.then(() => {
         datab.orderByChild('email').equalTo(email).once('value', function(snapshot) {
             if (snapshot.exists()) {
-                window.location.href = "Store_Gender/reg2.html";
+                window.location.href = "https://github.com/Abhishek-patni/dy";
             } else {
                 alert('Invalid login credentials');
             }
